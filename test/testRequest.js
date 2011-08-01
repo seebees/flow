@@ -125,7 +125,6 @@ vows.describe('What the client sees').addBatch(
     },
     'new Request().header(\'name\', \'value\')' : {
         topic : function () {
-            console.log('asdf');
             this.callback(null,
                 new Request('http://www.google.com').
                 header('name', 'value')
@@ -364,7 +363,6 @@ vows.describe('What the client sees').addBatch(
     
     /**
      * TODO
-     * test updateing Request.prototype.options
      * test form post
      * test RAW streaming
      * test multipart file
