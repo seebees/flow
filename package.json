@@ -1,0 +1,17 @@
+{
+    "name"              : "flow",
+    "version"           : "0.1.0",
+    "description"       : "An HTTP client library for node.js",
+    "author"            : "seebees@gmail.com",
+    "homepage"          : "https://github.com/seebees/flow",
+    "main"              : "./lib/flow.js",
+    "engines"           : { "node": "0.4.x" },
+    "dependencies"      : {
+        "draino"    : "0.x"
+    },
+    "devDependencies"   : {
+        "vows"      : ">=0.5.9",
+        "xml2js"    : ">=0.1.5",
+        "yaml"      : ">=0.2.1"
+    }
+}
