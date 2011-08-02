@@ -31,13 +31,13 @@ vows.describe('What the client sees').addBatch(
             );
         },
         'will return a Request object with uri options set.' : function(error, request) {
-            assert.strictEqual(request.options.protocol, 'http:');
-            assert.strictEqual(request.options.basicAuth, 'asdf:qwer');
-            assert.strictEqual(request.options.host, 'www.google.com');
-            assert.strictEqual(request.options.port, 80);
-            assert.strictEqual(request.options.path, '/new/place.php');
-            assert.strictEqual(request.options.query, '?value=BigDeal');
-            assert.strictEqual(request.options.hash, '#1234');
+            assert.strictEqual(request.options.protocol     , 'http:');
+            assert.strictEqual(request.options.basicAuth    , 'asdf:qwer');
+            assert.strictEqual(request.options.host         , 'www.google.com');
+            assert.strictEqual(request.options.port         , 80);
+            assert.strictEqual(request.options.path         , '/new/place.php');
+            assert.strictEqual(request.options.query        , '?value=BigDeal');
+            assert.strictEqual(request.options.hash         , '#1234');
         },
         'and new Request(\'someURI\')' : {
             topic : function () {
@@ -46,13 +46,13 @@ vows.describe('What the client sees').addBatch(
                 );
             },
             'are equivalant.' : function(error, request) {
-                assert.strictEqual(request.options.protocol, 'http:');
-                assert.strictEqual(request.options.basicAuth, 'asdf:qwer');
-                assert.strictEqual(request.options.host, 'www.google.com');
-                assert.strictEqual(request.options.port, 80);
-                assert.strictEqual(request.options.path, '/new/place.php');
-                assert.strictEqual(request.options.query, '?value=BigDeal');
-                assert.strictEqual(request.options.hash, '#1234');
+                assert.strictEqual(request.options.protocol     , 'http:');
+                assert.strictEqual(request.options.basicAuth    , 'asdf:qwer');
+                assert.strictEqual(request.options.host         , 'www.google.com');
+                assert.strictEqual(request.options.port         , 80);
+                assert.strictEqual(request.options.path         , '/new/place.php');
+                assert.strictEqual(request.options.query        , '?value=BigDeal');
+                assert.strictEqual(request.options.hash         , '#1234');
             }
         },
         'and new Request().protocol().basicAuth().host().port().path().query().hash()' : {
@@ -69,13 +69,13 @@ vows.describe('What the client sees').addBatch(
                 );
             },
             'are equivalant.' : function (error, request) {
-                assert.strictEqual(request.options.protocol, 'http:');
-                assert.strictEqual(request.options.basicAuth, 'asdf:qwer');
-                assert.strictEqual(request.options.host, 'www.google.com');
-                assert.strictEqual(request.options.port, 80);
-                assert.strictEqual(request.options.path, '/new/place.php');
-                assert.strictEqual(request.options.query, '?value=BigDeal');
-                assert.strictEqual(request.options.hash, '#1234');
+                assert.strictEqual(request.options.protocol     , 'http:');
+                assert.strictEqual(request.options.basicAuth    , 'asdf:qwer');
+                assert.strictEqual(request.options.host         , 'www.google.com');
+                assert.strictEqual(request.options.port         , 80);
+                assert.strictEqual(request.options.path         , '/new/place.php');
+                assert.strictEqual(request.options.query        , '?value=BigDeal');
+                assert.strictEqual(request.options.hash         , '#1234');
             }
         }
     },
@@ -112,14 +112,14 @@ vows.describe('What the client sees').addBatch(
         },
         'will upate the URI' : function(error, request) {
             
-            assert.strictEqual(request.options.protocol, 'https:');
-            assert.equal(request.options.port, 443);
-            assert.strictEqual(request.options.path, '/other/location.js');
-            assert.strictEqual(request.options.query, '?param=SmalDeal');
-            assert.strictEqual(request.options.hash, '#4321');
+            assert.strictEqual(request.options.protocol , 'https:');
+            assert.strictEqual(request.options.port     , 443);
+            assert.strictEqual(request.options.path     , '/other/location.js');
+            assert.strictEqual(request.options.query    , '?param=SmalDeal');
+            assert.strictEqual(request.options.hash     , '#4321');
             
             //TODO fix bug in node.js with relative to https
-            assert.strictEqual(request.options.host, 'www.google.com', 'I think this is a bug in node.');
+            assert.strictEqual(request.options.host     , 'www.google.com', 'I think this is a bug in node.');
             assert.strictEqual(request.options.basicAuth, 'diff:rent');
         }
     },
@@ -183,14 +183,14 @@ vows.describe('What the client sees').addBatch(
             }));
         },
         'will apply all options to the Request object' : function (error, request) {
-            assert.strictEqual(request.options.protocol, 'http:');
-            assert.strictEqual(request.options.basicAuth, 'asdf:qwer');
-            assert.strictEqual(request.options.host, 'www.google.com');
-            assert.strictEqual(request.options.port, 80);
-            assert.strictEqual(request.options.path, '/new/place.php');
-            assert.strictEqual(request.options.query, '?value=BigDeal');
-            assert.strictEqual(request.options.hash, '#1234');
-            assert.strictEqual(request.options.method, 'POST');
+            assert.strictEqual(request.options.protocol     , 'http:');
+            assert.strictEqual(request.options.basicAuth    , 'asdf:qwer');
+            assert.strictEqual(request.options.host         , 'www.google.com');
+            assert.strictEqual(request.options.port         , 80);
+            assert.strictEqual(request.options.path         , '/new/place.php');
+            assert.strictEqual(request.options.query        , '?value=BigDeal');
+            assert.strictEqual(request.options.hash         , '#1234');
+            assert.strictEqual(request.options.method       , 'POST');
         }
     },
     'new Request().form(data)' : {
@@ -264,14 +264,14 @@ vows.describe('What the client sees').addBatch(
             }));
         },
         'will apply all options to the Request object' : function (error, request) {
-            assert.strictEqual(request.options.protocol, 'http:');
-            assert.strictEqual(request.options.basicAuth, 'asdf:qwer');
-            assert.strictEqual(request.options.host, 'www.google.com');
-            assert.strictEqual(request.options.port, 80);
-            assert.strictEqual(request.options.path, '/new/place.php');
-            assert.strictEqual(request.options.query, '?value=BigDeal');
-            assert.strictEqual(request.options.hash, '#1234');
-            assert.strictEqual(request.options.method, 'POST');
+            assert.strictEqual(request.options.protocol     , 'http:');
+            assert.strictEqual(request.options.basicAuth    , 'asdf:qwer');
+            assert.strictEqual(request.options.host         , 'www.google.com');
+            assert.strictEqual(request.options.port         , 80);
+            assert.strictEqual(request.options.path         , '/new/place.php');
+            assert.strictEqual(request.options.query        , '?value=BigDeal');
+            assert.strictEqual(request.options.hash         , '#1234');
+            assert.strictEqual(request.options.method       , 'POST');
         }
     },
     'new Request().form(data)' : {
@@ -337,6 +337,7 @@ vows.describe('What the client sees').addBatch(
     },
     'Setting additonal headers' : {
         topic : function(){
+                
             new Request(webServer(this.callback) + '/asdf').
                 header('param1', 'one').
                 header('param2', 'two').
